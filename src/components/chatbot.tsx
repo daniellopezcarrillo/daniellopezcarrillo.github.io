@@ -233,7 +233,6 @@ const ChatBot: React.FC = () => {
         style={getChatPosition()}
         dragConstraints={dragConstraintsRef}
         // Aseguramos que este elemento sí capture eventos
-        style={{ ...getChatPosition(), pointerEvents: 'auto' }}
       >
         {!isOpen ? (
           <motion.button

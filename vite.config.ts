@@ -15,12 +15,24 @@ export default defineConfig({
     port: 5173,
     host: true,
     open: true,
-    historyApiFallback: true,
+    proxy: {
+      '/': {
+        target: 'http://localhost:5173',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
   build: {
     outDir: 'build',
     minify: 'terser',
     sourcemap: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: '[name]-[hash][extname]',
+        chunkFileNames: '[name]-[hash].js',
+        entryFileNames: '[name]-[hash].js',
+      },
+    },
   },
 })
-
