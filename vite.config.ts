@@ -18,7 +18,7 @@ export default defineConfig({
     historyApiFallback: true,
   },
   build: {
-    outDir: 'dist',
+    outDir: 'build',
     minify: 'terser',
     sourcemap: true,
   },
